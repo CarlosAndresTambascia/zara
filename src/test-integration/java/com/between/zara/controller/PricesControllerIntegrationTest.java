@@ -4,8 +4,10 @@ import com.between.zara.fixture.FixtureLoader;
 import io.restassured.http.Method;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.skyscreamer.jsonassert.Customization;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.skyscreamer.jsonassert.comparator.CustomComparator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -40,7 +42,7 @@ public class PricesControllerIntegrationTest {
                 .statusCode(SC_OK)
                 .expect(result -> JSONAssert.assertEquals(result.getResponse().getContentAsString(),
                         FixtureLoader.getPricesOutboundRs(),
-                        JSONCompareMode.LENIENT));
+                        customComparator()));
     }
 
     @Test
@@ -56,5 +58,10 @@ public class PricesControllerIntegrationTest {
         //then
         .then()
                 .statusCode(SC_NOT_FOUND);
+    }
+
+    private CustomComparator customComparator() {
+        return new CustomComparator(JSONCompareMode.LENIENT, new Customization("startDate", (o1, o2) -> true),
+                new Customization("endDate", (o1, o2) -> true));
     }
 }
