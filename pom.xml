@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.between</groupId>
     <artifactId>zara</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>zara</name>
     <description>Project for the interview process</description>
     <properties>
@@ -38,6 +38,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.12</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -3,6 +3,7 @@ package com.between.zara.controller;
 import com.between.zara.model.PriceRequest;
 import com.between.zara.model.PriceResponse;
 import com.between.zara.service.PriceService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ public class PriceController {
     private final PriceService priceService;
 
     @GetMapping
+    @Operation(summary = "Get price for a specific date")
     public ResponseEntity<PriceResponse> getPrices(@RequestBody @Valid PriceRequest request) {
         return priceService.getPricesByDate(request)
                 .map(ResponseEntity::ok)
