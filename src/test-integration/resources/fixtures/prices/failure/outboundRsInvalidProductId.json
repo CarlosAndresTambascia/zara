@@ -1,0 +1,4 @@
+{
+  "description": "Invalid request parameters",
+  "details": "Brand Id must be positive value"
+}
