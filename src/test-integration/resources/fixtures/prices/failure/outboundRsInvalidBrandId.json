@@ -1,0 +1,4 @@
+{
+  "description": "Invalid request parameters",
+  "details": "Product Id cannot be null"
+}

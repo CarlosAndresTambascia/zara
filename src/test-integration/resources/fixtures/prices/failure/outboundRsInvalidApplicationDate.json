@@ -1,0 +1,4 @@
+{
+  "description": "Invalid date pattern",
+  "details": "Please provide a date with the following format yyyy-MM-dd-HH.mm.ss"
+}
