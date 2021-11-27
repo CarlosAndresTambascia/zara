@@ -14,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class PriceRequest {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd-HH.mm.ss")
+    @NotNull(message = "Application Id must not be null")
     private Date applicationDate;
 
     @PositiveOrZero(message = "Product Id must be positive value")
