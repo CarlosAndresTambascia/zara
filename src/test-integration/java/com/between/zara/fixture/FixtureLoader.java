@@ -14,6 +14,10 @@ public class FixtureLoader {
         return readFileFromClassPath("fixtures/prices/outboundRs.json");
     }
 
+    public static String getPricesInboundRqNotFound() {
+        return readFileFromClassPath("fixtures/prices/inboundRqNotFound.json");
+    }
+
     @SneakyThrows
     private static String readFileFromClassPath(String filePath) {
         return Files.readString(ResourceUtils.getFile("classpath:" + filePath).toPath());

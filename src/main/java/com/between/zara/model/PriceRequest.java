@@ -1,12 +1,18 @@
 package com.between.zara.model;
 
-import lombok.RequiredArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@RequiredArgsConstructor
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PriceRequest {
-    private final Date applicationDate;
-    private final Long productId;
-    private final Long brandId;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd-HH.mm.ss")
+    private Date applicationDate;
+    private Long productId;
+    private Long brandId;
 }
