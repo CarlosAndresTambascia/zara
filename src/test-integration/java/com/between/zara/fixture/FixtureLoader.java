@@ -39,7 +39,7 @@ public class FixtureLoader {
     }
 
     public static String getOutboundRsInvalidProductId() {
-        return readFileFromClassPath("fixtures/prices/failure/OutboundRsInvalidProductId.json");
+        return readFileFromClassPath("fixtures/prices/failure/outboundRsInvalidProductId.json");
     }
 
     @SneakyThrows
