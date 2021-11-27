@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @ComponentScan(basePackageClasses = DataInitializer.class)
-class PriceRepositoryIT {
+class PriceRepositoryIntegrationTest {
     @Autowired
     private PriceRepository priceRepository;
 
@@ -46,6 +46,24 @@ class PriceRepositoryIT {
         final List<Price> prices = priceRepository.searchPriceForSpecificDate(productId, brandId, date);
         //then
         assertThat(prices).isNotEmpty();
+    }
+
+    private static Object[][] overlappingScenarios() {
+        return new Object[][]{
+                {35455L, 1L, createDate("2020-06-14-16.00.00")},
+                {35455L, 1L, createDate("2020-06-15-10.00.00")},
+                {35455L, 1L, createDate("2020-06-16-21.00.00")}
+        };
+    }
+
+    @ParameterizedTest
+    @MethodSource("overlappingScenarios")
+    void findPriceByDateBrandAndProductIdShouldBeSortedByPriority(long productId, long brandId, Date date) {
+        //when
+        final List<Price> prices = priceRepository.searchPriceForSpecificDate(productId, brandId, date);
+        //then
+        assertThat(prices).hasSize(2);
+        assertThat(prices.stream().findFirst().map(Price::getPriority)).contains(1);
     }
 
     private static Object[][] notFoundPriceScenarios() {

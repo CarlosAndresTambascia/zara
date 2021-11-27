@@ -13,7 +13,8 @@ import java.util.List;
 public interface PriceRepository extends JpaRepository<Price, Long> {
     @Query(value = "SELECT p FROM Price p " +
             "WHERE p.productId = :productId AND p.brand.id = :brandId " +
-            "AND :applicationDate BETWEEN p.startDate AND p.endDate")
+            "AND :applicationDate BETWEEN p.startDate AND p.endDate " +
+            "ORDER BY p.priority DESC")
     List<Price> searchPriceForSpecificDate(@Param("productId") Long productId,
                                            @Param("brandId") Long brandId,
                                            @Param("applicationDate") Date applicationDate);
