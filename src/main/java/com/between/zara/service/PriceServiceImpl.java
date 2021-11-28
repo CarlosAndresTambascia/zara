@@ -1,12 +1,12 @@
 package com.between.zara.service;
 
 import com.between.zara.model.Price;
-import com.between.zara.model.PriceRequest;
 import com.between.zara.model.PriceResponse;
 import com.between.zara.repository.PriceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,8 +16,8 @@ import java.util.Optional;
 public class PriceServiceImpl implements PriceService {
     private final PriceRepository priceRepository;
 
-    public Optional<PriceResponse> getPricesByDate(PriceRequest request) {
-        final List<Price> prices = priceRepository.searchPriceForSpecificDate(request.getProductId(), request.getBrandId(), request.getApplicationDate());
+    public Optional<PriceResponse> getPricesByDate(Long productId, Long brandId, Date applicationDate) {
+        final List<Price> prices = priceRepository.searchPriceForSpecificDate(productId, brandId, applicationDate);
         return prices.stream()
                 .filter(Objects::nonNull)
                 .findFirst()

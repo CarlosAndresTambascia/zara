@@ -15,7 +15,7 @@ y luego
 ```.\mvnw spring-boot:start```
 
 La API expone un solo endpoint para consultar los precios de los productos de una dada marca en una fecha dada 
-http://localhost:8080/api/v1/prices. Para almacenar la información se utiliza una base de datos en memoria H2, 
+http://localhost:8080/api/v1/prices y requiere 3 parametros. Para almacenar la información se utiliza una base de datos en memoria H2, 
 se puede acceder a la consola de la misma de manera local a travez de  http://localhost:8080/h2-console
 
 Asimismo la API tiene integración con Open API y se puede acceder a la misma localmente en el siguiente endpoint http://localhost:8080/swagger-ui.html

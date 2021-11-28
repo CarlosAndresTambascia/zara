@@ -2,7 +2,6 @@ package com.between.zara.service;
 
 import com.between.zara.model.Brand;
 import com.between.zara.model.Price;
-import com.between.zara.model.PriceRequest;
 import com.between.zara.model.PriceResponse;
 import com.between.zara.repository.PriceRepository;
 import lombok.SneakyThrows;
@@ -36,7 +35,7 @@ class PriceServiceImplTest {
     private static final long PRODUCT_ID1 = 35455L;
     private static final int PRIORITY = 0;
     private static final BigDecimal PRICE = BigDecimal.valueOf(35.50);
-    public static final String BRAND_NAME = "Zara";
+    private static final String BRAND_NAME = "Zara";
 
     @Mock
     private PriceRepository priceRepository;
@@ -54,7 +53,7 @@ class PriceServiceImplTest {
         //given
         when(priceRepository.searchPriceForSpecificDate(PRODUCT_ID, BRAND_ID, APPLICATION_DATE)).thenReturn(List.of(createPrice()));
         //when
-        final Optional<PriceResponse> prices = service.getPricesByDate(createPriceRequest());
+        final Optional<PriceResponse> prices = service.getPricesByDate(PRODUCT_ID, BRAND_ID, APPLICATION_DATE);
         //then
         assertThat(prices.get()).satisfies(price -> {
                     assertThat(price.getPrice()).isEqualTo(PRICE);
@@ -71,7 +70,7 @@ class PriceServiceImplTest {
         //given
         when(priceRepository.searchPriceForSpecificDate(PRODUCT_ID, BRAND_ID, APPLICATION_DATE)).thenReturn(emptyList());
         //when
-        final Optional<PriceResponse> prices = service.getPricesByDate(createPriceRequest());
+        final Optional<PriceResponse> prices = service.getPricesByDate(PRODUCT_ID, BRAND_ID, APPLICATION_DATE);
         //then
         assertThat(prices).isEmpty();
         verify(priceRepository).searchPriceForSpecificDate(eq(PRODUCT_ID), eq(BRAND_ID), eq(APPLICATION_DATE));
@@ -88,10 +87,6 @@ class PriceServiceImplTest {
                 .price(PRICE)
                 .currency(EUR)
                 .build();
-    }
-
-    private PriceRequest createPriceRequest() {
-        return new PriceRequest(APPLICATION_DATE, PRODUCT_ID, BRAND_ID);
     }
 
     @SneakyThrows

@@ -1,17 +1,16 @@
 package com.between.zara.controller;
 
-import com.between.zara.model.PriceRequest;
 import com.between.zara.model.PriceResponse;
 import com.between.zara.service.PriceService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
+import java.util.Date;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,8 +20,12 @@ public class PriceController {
 
     @GetMapping
     @Operation(summary = "Get price for a specific date")
-    public ResponseEntity<PriceResponse> getPrices(@RequestBody @Valid PriceRequest request) {
-        return priceService.getPricesByDate(request)
+    public ResponseEntity<PriceResponse> getPrices(
+            Long productId,
+            Long brandId,
+            @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
+                    Date applicationDate) {
+        return priceService.getPricesByDate(productId, brandId, applicationDate)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

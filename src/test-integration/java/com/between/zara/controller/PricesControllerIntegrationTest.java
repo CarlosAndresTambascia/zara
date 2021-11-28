@@ -4,8 +4,6 @@ import com.between.zara.fixture.FixtureLoader;
 import io.restassured.http.Method;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.skyscreamer.jsonassert.Customization;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
@@ -16,9 +14,9 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.context.WebApplicationContext;
 
-import static com.between.zara.fixture.FixtureLoader.*;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
+import static org.apache.http.HttpStatus.SC_OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 
@@ -35,10 +33,9 @@ public class PricesControllerIntegrationTest {
         given()
                 .webAppContextSetup(applicationContext)
                 .contentType(APPLICATION_JSON_VALUE)
-                .body(FixtureLoader.getPricesInboundRq())
         //when
         .when()
-                .request(Method.GET, "/api/v1/prices")
+                .request(Method.GET, "/api/v1/prices?productId=35455&brandId=1&applicationDate=2020-06-14-10.00.00")
         //then
         .then()
                 .statusCode(SC_OK)
@@ -56,37 +53,10 @@ public class PricesControllerIntegrationTest {
                 .body(FixtureLoader.getPricesInboundRqNotFound())
         //when
         .when()
-                .request(Method.GET, "/api/v1/prices")
+                .request(Method.GET, "/api/v1/prices?productId=123&brandId=1&applicationDate=2020-06-14-10.00.00")
         //then
         .then()
                 .statusCode(SC_NOT_FOUND);
-    }
-
-    private static Object[][] invalidRqScenarios() {
-        return new Object[][]{
-                {getInboundRqInvalidApplicationDate(), getOutboundRsInvalidApplicationDate()},
-                {getInboundRqInvalidBrandId(), getOutboundRsInvalidBrandId()},
-                {getInboundRqInvalidProduct(), getOutboundRsInvalidProductId()}
-        };
-    }
-
-    @ParameterizedTest
-    @MethodSource("invalidRqScenarios")
-    void shouldRetrieveValidationExceptionIfInvalidRequest(String request, String expectedResponse) {
-        //given
-        given()
-                .webAppContextSetup(applicationContext)
-                .contentType(APPLICATION_JSON_VALUE)
-                .body(request)
-        //when
-        .when()
-                .request(Method.GET, "/api/v1/prices")
-        //then
-        .then()
-                .statusCode(SC_BAD_REQUEST)
-                .expect(result -> JSONAssert.assertEquals(result.getResponse().getContentAsString(),
-                        expectedResponse,
-                        JSONCompareMode.LENIENT));
     }
 
     private CustomComparator customComparator() {

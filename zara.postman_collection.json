@@ -7,23 +7,11 @@
 	"item": [
 		{
 			"name": "Happy path - Test 1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-14-10.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=1&applicationDate=2020-06-14-10.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -33,6 +21,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-10.00.00"
+						}
 					]
 				}
 			},
@@ -48,7 +50,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-14-16.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -56,7 +58,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=1&applicationDate=2020-06-14-16.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -66,6 +68,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-16.00.00"
+						}
 					]
 				}
 			},
@@ -73,23 +89,11 @@
 		},
 		{
 			"name": "Happy path - Test 3",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-14-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=1&applicationDate=2020-06-14-21.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -99,6 +103,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-21.00.00"
+						}
 					]
 				}
 			},
@@ -106,23 +124,11 @@
 		},
 		{
 			"name": "Happy path - Test 4",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-15-10.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=1&applicationDate=2020-06-15-10.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -132,6 +138,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2020-06-15-10.00.00"
+						}
 					]
 				}
 			},
@@ -139,23 +159,11 @@
 		},
 		{
 			"name": "Happy path - Test 5",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=1&applicationDate=2020-06-16-21.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -165,6 +173,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2020-06-16-21.00.00"
+						}
 					]
 				}
 			},
@@ -172,23 +194,11 @@
 		},
 		{
 			"name": "Not found - Test 1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=1&applicationDate=2021-09-16-21.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -198,6 +208,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2021-09-16-21.00.00"
+						}
 					]
 				}
 			},
@@ -205,23 +229,11 @@
 		},
 		{
 			"name": "Not found - Test 2",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=123&brandId=1&applicationDate=2021-09-16-21.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -231,6 +243,20 @@
 						"api",
 						"v1",
 						"prices"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "123"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2021-09-16-21.00.00"
+						}
 					]
 				}
 			},
@@ -238,23 +264,11 @@
 		},
 		{
 			"name": "Not found - Test 3",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v1/prices?productId=35455&brandId=2&applicationDate=2021-09-16-21.00.00",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -264,204 +278,20 @@
 						"api",
 						"v1",
 						"prices"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bad Request - Date mismatch",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
-					"protocol": "http",
-					"host": [
-						"localhost"
 					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"prices"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bad Request - Missing date",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"query": [
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "2"
+						},
+						{
+							"key": "applicationDate",
+							"value": "2021-09-16-21.00.00"
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"prices"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bad Request - Missing product id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"prices"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bad Request - Negative product id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"prices"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bad Request - Negative brand id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"prices"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bad Request - Missing brand id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"applicationDate\": \"2020-06-16-21.00.00\",\r\n  \"productId\": \"35455\",\r\n  \"brandId\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"prices"
 					]
 				}
 			},
