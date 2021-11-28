@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/CarlosAndresTambascia/zara/tree/master.svg?style=svg&circle-token=391507a95ace2af3ef1f2fbc54d67bdd0ed13556)](https://circleci.com/gh/CarlosAndresTambascia/zara/tree/master)
 
-<h6> Stack tecnologico: </h6>
+<h4> Stack tecnologico: </h4>
 
 - [Maven](https://maven.apache.org/guides/)
 - [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) 
@@ -14,7 +14,7 @@
 - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)
 
 
-<h6> Instrucciónes para correr el proyecto: </h6>
+<h4> Instrucciónes para correr el proyecto: </h4>
 
 Tener instalado el jdk 17.
 
@@ -34,7 +34,7 @@ Asimismo la API tiene integración con Open API y se puede acceder a la misma lo
 
 En la carpeta raíz hay una colección de Postman con algunas pruebas manuales. (zara.postman_collection.json)
 
-<h6> Casos de prueba mandatorios: </h6>
+<h4> Casos de prueba mandatorios: </h4>
 Los casos de prueba mandatorios se encuentran en el siguiente 
 
 [archivo](https://github.com/CarlosAndresTambascia/zara/blob/master/src/test-integration/java/com/between/zara/repository/PriceRepositoryIntegrationTest.java) 
