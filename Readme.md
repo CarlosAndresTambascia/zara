@@ -35,4 +35,6 @@ Asimismo la API tiene integración con Open API y se puede acceder a la misma lo
 En la carpeta raíz hay una colección de Postman con algunas pruebas manuales. (zara.postman_collection.json)
 
 <h6> Casos de prueba mandatorios: </h6>
-Los casos de prueba mandatorios se encuentran en el siguiente [archivo](https://github.com/CarlosAndresTambascia/zara/blob/master/src/test-integration/java/com/between/zara/repository/PriceRepositoryIntegrationTest.java) 
+Los casos de prueba mandatorios se encuentran en el siguiente 
+
+[archivo](https://github.com/CarlosAndresTambascia/zara/blob/master/src/test-integration/java/com/between/zara/repository/PriceRepositoryIntegrationTest.java) 
